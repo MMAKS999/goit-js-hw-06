@@ -12,3 +12,21 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+
+const galleryEl = document.querySelector('.gallery');
+console.log(galleryEl);
+
+const galleryMarkup = images.reduce((accumulator, { url, alt }) => {
+  return accumulator + `
+    <li>
+      <img src="${url}" alt="${alt}" style="width: 100%; height: auto; margin-bottom: 20px;" 
+    </li>`;
+}, '');
+
+galleryEl.insertAdjacentHTML('beforeend', galleryMarkup)
+galleryEl.setAttribute("style", "display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;")
+
+
+
+
