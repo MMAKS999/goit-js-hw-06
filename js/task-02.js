@@ -10,7 +10,6 @@ const ingredients = [
 const ingredientsEl = document.querySelector('#ingredients');
 console.log(ingredientsEl);
 
-
 // const fragment = document.createDocumentFragment();
 
 // ingredients.forEach((element) => {
@@ -24,17 +23,16 @@ console.log(ingredientsEl);
 // ingredientsEl.appendChild(fragment);
 // console.log(ingredientsEl);
 
-// Як краще, чи краще так ? 
-const items = ingredients.map(ingredient => {
+// Як краще, чи краще так ?
+const items = ingredients.map((ingredient) => {
   const item = document.createElement('li');
   item.textContent = ingredient;
   item.classList.add('item');
   return item;
-  
 });
-console.log (items)
+console.log(items)
 
-// Додавання пустого рядка очищає 
+// Додавання пустого рядка очищає
 ingredientsEl.innerHTML = '';
 ingredientsEl.append(...items);
 console.log(ingredientsEl);
